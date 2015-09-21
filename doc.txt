@@ -1,0 +1,304 @@
+/******  添加用户   ********/
+http://127.0.0.1:8989/user/add?username=guochong&password=guochong&token=xx&ugroup=2
+// ugroup
+// 失败
+{
+    "error": {
+        "code": 200003,
+        "message": "user alreay exist"
+    },
+    "success": 0
+}
+
+// 成功
+{
+    "data": {
+        "ugroup": 2,
+        "login_time": "",
+        "regist_time": "2015-09-04 18:23:26",
+        "uid": 8,
+        "username": "dadadong"
+    },
+    "success": 1
+}
+
+
+/******  登录   ******/
+http://127.0.0.1:8989/user/login?username=gc&password=admin
+// 成功
+{
+    "data": {
+        "ugroup": 1,
+        "login_time": "2015-09-04 18:24:52",
+        "regist_time": "2015-09-04 18:18:33",
+        "token": "ZtaHGy0vuAjncVFp4Dr9LRXCd1TsbJom",
+        "uid": 7,
+        "username": "gc"
+    },
+    "success": 1
+}
+
+// 失败
+{
+    "error": {
+        "code": 200004,
+        "message": "wrong username or password, please retry"
+    },
+    "success": 0
+}
+
+// 获取全部用户  只有admin才能看到
+http://202.204.54.230:8989/user/getall?token=ykx8eAlqOtXFSK46Q9N3UZi5jLpdobfs
+{
+    "data": {
+        "users": [
+            {
+                "login_time": "2015-09-04 18:17:43",
+                "regist_time": "2015-09-04 18:06:09",
+                "ugroup": 2,
+                "uid": 6,
+                "username": "lddddaeipo"
+            },
+            {
+                "login_time": "2015-09-04 18:36:49",
+                "regist_time": "2015-09-04 18:18:33",
+                "ugroup": 1,
+                "uid": 7,
+                "username": "gc"
+            }
+        ]
+    },
+    "success": 1
+}
+
+// 获取用户信息
+http://202.204.54.230:8989/user/get?token=wTq87f1l49JNxyFE2kURazHodgsB30pY&uid=1
+{
+    "data": {
+        "user": {
+            "login_time": "2015-09-04 19:40:33",
+            "regist_time": "2015-09-04 17:42:12",
+            "ugroup": 1,
+            "uid": 1,
+            "username": "admin"
+        }
+    },
+    "success": 1
+}
+
+// 更改密码
+http://202.204.54.230:8989/user/changepass?opassword=admin&uid=1&npassword=admin
+{
+    "data": {
+        "correct": 1
+    },
+    "success": 1
+}
+
+// 删除用户
+// uid: 要被删除的用户ID
+http://202.204.54.230:8989/user/delete?uid=6&token=RAHWVl39rpa0NnXxdoYG5gF1T2vOPJBU
+{
+    "data": {
+        "correct": 1
+    },
+    "success": 1
+}
+
+
+
+// 加入铁矿石
+http://127.0.0.1:8989/ore/add?token=2Kw7QovBpAOda9cuZ5GWDxHkJ8y4g0VN&name=hahahhaah&assimilability=0.01&fluxility=0.01&bond_strength=0.01&crystal_strength=0.01&burning_loss=0.01&tfe=0.01&feo=0.01&cao=0.01&sio2=0.01&mgo=0.01&al2o3=0.01
+{
+    "data": {
+        "ore": {
+            "Al2O3": 0.01,
+            "CaO": 0.01,
+            "FeO": 0.01,
+            "MgO": 0.01,
+            "SiO2": 0.01,
+            "TFe": 0.01,
+            "addtime": "2015-09-05 11:20:56",
+            "assimilability": 0.01,
+            "bond_strength": 0.01,
+            "burning_loss": 0.01,
+            "crystal_strength": 0.01,
+            "fluxility": 0.01,
+            "id": 4,
+            "name": "hahahhaah",
+            "uid": 1.0,
+            "updatetime": "2015-09-05 11:20:56",
+            "username": "admin",
+            "score": null  // 如果没有权重，则score为空
+        }
+    },
+    "success": 1
+}
+
+
+// 获取单条的铁矿石信息
+http://127.0.0.1:8989/ore/get?token=2Kw7QovBpAOda9cuZ5GWDxHkJ8y4g0VN&oreid=12
+// 失败
+{
+    "error": {
+        "code": 300003,
+        "message": "this ore does not exist"
+    },
+    "success": 0
+}
+
+// 成功
+{
+    "data": {
+        "ore": {
+            "Al2O3": 0.01,
+            "CaO": 0.01,
+            "FeO": 0.01,
+            "MgO": 0.01,
+            "SiO2": 0.01,
+            "TFe": 0.01,
+            "addtime": "2015-09-05 11:24:57",
+            "assimilability": 0.01,
+            "bond_strength": 0.01,
+            "burning_loss": 0.01,
+            "crystal_strength": 0.01,
+            "fluxility": 0.01,
+            "id": 5,
+            "name": "hxxahahhaah",
+            "score": null,  // 如果没有权重，则score为空
+            "uid": 1.0,
+            "updatetime": "2015-09-05 11:24:57",
+            "username": "admin"
+        }
+    },
+    "success": 1
+}
+
+// 搜索铁矿石
+http://127.0.0.1:8989/ore/search?token=i07beEalF82xWzSMAtRX4qBg9hvuw1DV&page_size=3&page_index=2&conditon=xxxxxxxxxxxx&order=xxxx
+http://127.0.0.1:8989/ore/search?token=KcDe5ubzFhRkYjQd9mO2LwTsV6iWC4EN&condition=username%0Dadmin%0D
+
+page_size: 页面大小, 默认10
+page_index: 当前页面，默认1
+order:  排序字段, 默认为addtime,  排序是倒序
+condition规则: 字段名 \r min \r max   \n  字段名 \r min \r max  
+\r 为%0D, \n 为%0A
+包括的字段如下:
+assimilability 
+fluxility 
+bond_strength 
+crystal_strength 
+burning_loss 
+tfe  
+feo  
+cao  
+sio2 
+mgo  
+al2o3          
+score 
+username: 添加者    特例  name \r 子串 \r
+addtime:  添加时间   格式 '2015-09-05 13:33:19'
+name: 铁矿粉名     特例  name \r 子串 \r
+
+{
+    "data": {
+        "ores": [
+            {
+                "Al2O3": 0.01,
+                "CaO": 0.01,
+                "FeO": 0.01,
+                "MgO": 0.01,
+                "SiO2": 0.01,
+                "TFe": 0.01,
+                "addtime": "2015-09-05 13:33:19",
+                "assimilability": 0.01,
+                "bond_strength": 0.01,
+                "burning_loss": 0.01,
+                "crystal_strength": 0.01,
+                "fluxility": 0.01,
+                "id": 22,
+                "name": "3",
+                "uid": 1.0,
+                "updatetime": "2015-09-05 13:33:19",
+                "username": "admin"
+            },
+            {
+                "Al2O3": 0.01,
+                "CaO": 0.01,
+                "FeO": 0.01,
+                "MgO": 0.01,
+                "SiO2": 0.01,
+                "TFe": 0.01,
+                "addtime": "2015-09-05 13:33:22",
+                "assimilability": 0.01,
+                "bond_strength": 0.01,
+                "burning_loss": 0.01,
+                "crystal_strength": 0.01,
+                "fluxility": 0.01,
+                "id": 23,
+                "name": "4",
+                "uid": 1.0,
+                "updatetime": "2015-09-05 13:33:22",
+                "username": "admin"
+            }
+        ],
+        "page_count": 6,   // 页面总数
+        "page_index": 2,   // 当前页面，从1开始编号
+        "page_size": 2,    // 页面记录数
+        "record_count": 11 // 记录总数
+    },
+    "success": 1
+}
+
+
+// 删除铁矿粉 普通用户只能删除自己的，管理员可以删除任何人的记录
+http://127.0.0.1:8989/ore/delete?token=Nolay2J3YRQ0XDhBf1OM9CEAFHsb6pZt&oreid=1
+{
+    "data": {
+        "correct": 1
+    },
+    "success": 1
+}
+
+
+// 修改权重, 只有管理员才能修改权重
+http://202.204.54.230:8989/ore/setw?token=S17iJZ2qcHehgbIo6pfC4lGamWrdzUOV&assimilability=0.1&fluxility=0.1&bond_strength=0.1&crystal_strength=0.1&burning_loss=0.1&tfe=0.1&feo=0.1&cao=0.1&sio2=0.1&mgo=0.1&al2o3=0.1
+{
+    "data": {
+        "correct": 1
+    },
+    "success": 1
+}
+
+// 修改铁矿粉属性，普通用户只能修改自己的，管理员可以修改任何人的记录
+http://202.204.54.230:8989/ore/update?token=S17iJZ2qcHehgbIo6pfC4lGamWrdzUOV&oreid=10&name=xxx&assimilability=0.8&fluxility=0.1&bond_strength=0.1&crystal_strength=0.1&burning_loss=0.1&tfe=0.1&feo=0.1&&cao=0.1&sio2=0.1&mgo=0.1&al2o3=0.1
+// 成功返回铁矿粉属性
+{
+    "data": {
+        "ore": {
+            "addtime": "2015-09-05 18:20:39",
+            "al2o3": 0.1,
+            "assimilability": 0.8,
+            "bond_strength": 0.1,
+            "burning_loss": 0.1,
+            "cao": 0.1,
+            "crystal_strength": 0.1,
+            "feo": 0.1,
+            "fluxility": 0.1,
+            "id": 10,
+            "mgo": 0.1,
+            "name": "xxx",
+            "score": 888888888888.8901,
+            "sio2": 0.1,
+            "tfe": 0.1,
+            "uid": 1.0,
+            "updatetime": "2015-09-05 21:46:25",
+            "username": "admin"
+        }
+    },
+    "success": 1
+}
+
+
+
+

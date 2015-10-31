@@ -2,13 +2,11 @@
 <html>
 <head>
     <title>宣钢</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="static/css/common.css">
-    <script type="text/javascript" src="jquery"></script>
-    <script type="text/javascript" src="cookie"></script>
+    <script type="text/javascript" src="/static/libs/jquery/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/static/libs/jquery/jquery.cookie.js"></script>
     <!--<script type="text/javascript" src="validate"></script>-->
     <!--<script type="text/javascript" src="metadata"></script>-->
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/libs/bootstrap/js/bootstrap.min.js"></script>
     <script>
         if( (typeof($.cookie("token"))== "undefined") ||($.cookie("token")==(null||"null"||""))){
 //            alert("sisi");
@@ -27,6 +25,9 @@
         token = $.cookie("token");
 
     </script>
+
+    <link rel="stylesheet" type="text/css" href="/static/libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css" />
 </head>
 <body>
 

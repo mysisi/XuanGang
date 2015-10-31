@@ -1,0 +1,139 @@
+<link rel="import" href="views/_part/header.html?__inline">
+
+    <div class="content" style="width: 85%; margin-left: auto;margin-right: auto">
+
+        <div class="content-title">
+            <h3>添加烧结矿</h3>
+        </div>
+
+        <div class="content-body" id="sinterContentBody">
+
+            <div class="sinter-form">
+
+                <form class="navbar-form">
+
+                    <div class="add-table">
+                            <div style="display: block">
+                                <label>烧结矿名称:</label>
+                                <input type="text" class="form-control val sinter-name" style="width: 200px" name="name" value="">
+                            </div>
+                            <div>
+                                <label>利用系数:</label>
+                                <input type="number" class="form-control val" min="0" style="width: 200px" name="usage_factor" value="0" >
+                            </div>
+                            <div>
+                                <label>燃耗:</label>
+                                <input type="number" class="form-control val" min="0" style="width: 200px" name="fuel_consumption" value="0">
+                            </div>
+                            <div>
+                                <label>成品率:</label>
+                                <input type="number" class="form-control val" min="0" style="width: 200px" name="rate_of_ok" value="0" >
+                            </div>
+                            <div>
+                                <label>低温粉化指数:</label>
+                                <input type="number" class="form-control val" min="0" style="width: 200px" name="low_temperature" value="0">
+                            </div>
+                            <div>
+                                <label>转鼓指数:</label>
+                                <input type="number" class="form-control val" min="0" style="width: 200px" name="drum_index" value="0" >
+                            </div>
+                            <div>
+                                <label>开始软化温度:</label>
+                                <input type="number" class="form-control val" min="0" style="width: 200px" name="softening_index" value="0">
+                            </div>
+                            <div>
+                                <label>还原度:</label>
+                                <input type="number" class="form-control val" min="0" style="width: 200px" name="reduction_degree" value="0" >
+                            </div>
+                            <div>
+                                <label>软化区间:</label>
+                                <input type="number" class="form-control val" min="0" style="width: 200px" name="softening_region" value="0">
+                            </div>
+                    </div>
+
+                    <div id="oreComp" class="oreComp">
+                        <div class="oreComp-area">
+                            <label>组成成分:</label>
+                            <div id="ore-comps" class="ore-comps">
+                            </div>
+                        </div>
+
+                        <div class="oreSearch-area">
+                            <label>铁矿粉搜索:</label>
+                            <input id="kw" type="text" class="form-control val" style="width: 200px">
+                            <button class="btn btn-success" type="button" id="searchBtn" style="margin-left: 10px">搜索</button>
+                        </div>
+
+                        <!-- Table -->
+                        <table class="table ore-list" id="oreList" style="">
+                            <thead>
+                            <tr>
+                                <th type="th" value="name" style="">铁矿粉名称</th>
+                                <th type="th" value="al2o3">添加人</th>
+                                <th type="th" value="cao">添加时间</th>
+                                <th type="th" value="feo">评分</th>
+                                <th type="th" value="mgo">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+
+            </div>
+
+            <div style="text-align: center;margin-bottom: 30px;">
+                <button type="button" class="btn btn-primary" id="addSinterConfirm">添加烧结矿</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="comfirmAddPop" class="popwrap popcy" style="margin-top: -165px;">
+        <div class="popmain" style="width:430px;">
+            <div class="title">
+                <h4>添加烧结矿</h4>
+                <span class="glyphicon glyphicon-remove cancel-btn"></span>
+            </div>
+
+            <div style="height:230px;" class="cont">
+                <div class="tabcon">
+                    <h3>确认添加该烧结矿?</h3>
+                    <div style="float: right">
+                        <button type="button" class="btn btn-warning cancel-btn">取消</button>
+                        <button type="submit" class="btn btn-primary comfirm-btn">确定</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="addWeight" class="popwrap popcy" style="margin-top: -165px;">
+        <div class="popmain" style="width:430px;">
+            <div class="title">
+                <h4>添加权重</h4>
+                <span class="glyphicon glyphicon-remove cancel-btn"></span>
+            </div>
+
+            <div style="height:230px;" class="cont">
+                <div class="tabcon">
+                    <div style="margin-bottom: 20px">
+                        <label>为铁矿粉设置权重:</label>
+                        <input id="weight" type="text" class="form-control" style="width: 100px; display: inline-block;margin-left: 20px" value="0">
+                    </div>
+
+                    <div style="float: right">
+                        <button type="button" class="btn btn-warning cancel-btn">取消</button>
+                        <button type="button" class="btn btn-primary weightConfirm">确定</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="static/js/sinter/addSinter.js"></script>
+<link rel="import" href="views/_part/footer.html?__inline">

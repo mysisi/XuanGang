@@ -302,3 +302,38 @@ http://202.204.54.230:8989/ore/update?token=S17iJZ2qcHehgbIo6pfC4lGamWrdzUOV&ore
 
 
 
+// 添加烧结矿
+http://127.0.0.1:8989/sinter/add?name=ffffffff&usage_factor=1.0&fuel_consumption=1.0&rate_of_ok=0&drum_index=0&reduction_degree=0&low_temperature=1.0&softening_index=1.0&softening_region=1&token=zctOTRhowWQ2gUEKrDe7Bb8HIjPFLGny&materials=10%0D1.0%0A11%0D0.1
+materials规则: oreid \r value \n  oreid \r value
+成功返回：
+{"data": {"sinter_id": 6}, "success": 1}
+
+// 搜索烧结矿
+http://127.0.0.1:8989/sinter/search?token=zctOTRhowWQ2gUEKrDe7Bb8HIjPFLGny
+page_size: 页面大小, 默认10
+page_index: 当前页面，默认1
+order:  排序字段, 默认为addtime,  排序是倒序
+condition规则: 字段名 \r min \r max   \n  字段名 \r min \r max  
+\r 为%0D, \n 为%0A
+包括的字段如下:
+usage_factor
+fuel_consumption
+rate_of_ok
+drum_index
+reduction_degree
+low_temperature
+softening_index
+softening_region
+score
+
+username: 添加者    特例  name \r 子串 \r
+addtime:  添加时间   格式 '2015-09-05 13:33:19'
+name: 铁矿粉名     特例  name \r 子串 \r
+
+
+根据铁矿粉筛选烧结矿
+http://127.0.0.1:8989/sinter/find?token=zctOTRhowWQ2gUEKrDe7Bb8HIjPFLGny&oreids=10,11
+
+删除烧结矿
+http://127.0.0.1:8989/sinter/delete?token=zctOTRhowWQ2gUEKrDe7Bb8HIjPFLGny&id=1
+

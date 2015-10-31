@@ -1,0 +1,77 @@
+<link rel="import" href="views/_part/header.html?__inline">
+
+    <div class="content" style="width: 85%; margin-left: auto;margin-right: auto">
+
+        <div class="content-title">
+            <h3>筛选烧结矿</h3>
+        </div>
+
+        <div class="content-body" id="sinterContentBody">
+
+            <div class="sinter-form">
+
+                <form class="navbar-form">
+
+                    <div id="oreComp" class="oreComp">
+                        <div class="oreComp-area">
+                            <label>组成成分:</label>
+                            <div id="ore-comps" class="ore-comps">
+                            </div>
+                        </div>
+
+                        <div class="oreSearch-area">
+                            <label>铁矿粉搜索:</label>
+                            <input id="kw" type="text" class="form-control val" style="width: 200px">
+                            <button class="btn btn-success" type="button" id="searchBtn" style="margin-left: 10px">搜索</button>
+                        </div>
+
+                        <!-- Table -->
+                        <table class="table ore-list" id="oreList" style="">
+                            <thead>
+                            <tr>
+                                <th type="th" value="name" style="">铁矿粉名称</th>
+                                <th type="th" value="al2o3">添加人</th>
+                                <th type="th" value="cao">添加时间</th>
+                                <th type="th" value="feo">评分</th>
+                                <th type="th" value="mgo">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+
+            </div>
+
+            <div style="text-align: center;">
+                <button type="button" class="btn btn-primary" id="filterSinterConfirm">筛选烧结矿</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="comfirmAddPop" class="popwrap popcy" style="margin-top: -165px;">
+        <div class="popmain" style="width:430px;">
+            <div class="title">
+                <h4>添加烧结矿</h4>
+                <span class="glyphicon glyphicon-remove cancel-btn"></span>
+            </div>
+
+            <div style="height:230px;" class="cont">
+                <div class="tabcon">
+                    <h3>确认添加该烧结矿?</h3>
+                    <div style="float: right">
+                        <button type="button" class="btn btn-warning cancel-btn">取消</button>
+                        <button type="submit" class="btn btn-primary comfirm-btn">确定</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<script type="text/javascript" src="static/js/sinter/filterSinter.js"></script>
+<link rel="import" href="views/_part/footer.html?__inline">

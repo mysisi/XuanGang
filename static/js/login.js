@@ -12,7 +12,7 @@ $(function (){
     $.removeCookie('uid');
     $.removeCookie('username');
 
-    domain = "http://202.204.54.191:8989";
+    domain = "http://202.204.54.193:8989";
 
     $("#login").on("click",function(){
 

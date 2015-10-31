@@ -27,36 +27,94 @@ a,a:link,a:visited,a:active{
     width: 100%;
     margin: auto;
 }
-
-.add-table tr{
-    line-height: 50px;
+div.add-table{
+    white-space: normal;
 }
-
-.add-table tr td label{
-    margin: 0 20px 0 60px;
-    width: 75px;
-}
-
-.search-table tr{
+.add-table div{
+    display: inline-block;
+    white-space: nowrap;
     line-height: 40px;
+    width: 250px;
+    margin: 0 10px 0 30px;
+}
+.add-table div label{
+    display: inline-block;
+    width: 80px;
+}
+.add-table div input{
+    margin: 0 10px 0 0;
 }
 
-.search-table tr input{
-    margin: 0 10px 0 10px;
+div.search-table{
+    white-space: normal;
 }
-
-.search-table tr td label{
-    margin: 0 0 0 20px;
-    width: 75px;
+.search-table div{
+    display: inline-block;
+    white-space: nowrap;
+    line-height: 40px;
+    width: 250px;
+    margin: 0 10px 0 30px;
 }
-
+.search-table div label{
+    display: inline-block;
+    width: 80px;
+}
+.search-table div input{
+    margin: 0 10px 0 0;
+}
 .accu-group h4{
     color: #5c83d3;
     font-weight: bold;
 }
-
 .oreInfoList th{
     cursor: pointer;
+}
+
+/*烧结矿添加*/
+.sinter-form{
+    margin: 0 auto;
+}
+#sinterContentBody .add-table div{
+    margin: 0 10px 0 60px;
+}
+#sinterContentBody label{
+    width: 90px;
+}
+.oreComp{
+    margin: 20px 0 0 60px;
+}
+.oreComp-area{
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+.oreComp-area label{
+    vertical-align: top;
+}
+.ore-comps{
+    display: inline-block;
+    width: 600px;
+    white-space: normal;
+}
+.ore-comps div{
+    margin-bottom: 10px;
+    min-width: 35px;
+}
+.oreSearch-area{
+    margin-bottom: 30px;
+}
+.oreComp .ore-list{
+    word-break: break-all;
+    word-wrap:break-word;
+    border:1px solid #ddd;
+}
+.btn-none{
+    color: #fff;
+    background-color: #aeaaac;
+    border-color: #aeaaac;
+    cursor: default;
+}
+.btn-none:hover{
+    color: #fff;
 }
 /*弹窗*/
 .popwrap.popcy {
@@ -118,4 +176,8 @@ a,a:link,a:visited,a:active{
     background-color: #000;
     filter: alpha(opacity:50);
     opacity: 0.5;
+}
+.tabcon label{
+    /*float: left;*/
+    /*vertical-align: middle;*/
 }

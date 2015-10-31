@@ -89,7 +89,8 @@ function changePassword(){
 }
 
 function popShow(popId){
-
+    $(".blackmask").css("width",$(window).width());
+    $(".blackmask").css("height",$(window).height());
     $(".blackmask").css("display","block");
     $(popId).css("display","block");
 

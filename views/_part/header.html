@@ -11,11 +11,10 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script>
         if( (typeof($.cookie("token"))== "undefined") ||($.cookie("token")==(null||"null"||""))){
-//            alert("sisi");
             window.location.href = "/views/login.html";
         }
 
-        domain = "http://202.204.54.191:8989";
+        domain = "http://202.204.54.193:8989";
 //        domain = "http://127.0.0.1:8080";
 
         userGroup = {
@@ -50,10 +49,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">烧结矿 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">添加</a></li>
-                            <li><a href="#">搜索</a></li>
+                            <li><a href="/views/sinter/addSinter.html">添加</a></li>
+                            <li><a href="/views/sinter/filterSinter.html">筛选</a></li>
+                            <li><a href="/views/sinter/searchSinter.html">搜索</a></li>
                         </ul>
                     </li>
+
                     <li class=""><a href="/views/userManage.html">用户管理</a></li>
 
                 </ul>
